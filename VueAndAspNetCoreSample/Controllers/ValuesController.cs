@@ -11,10 +11,15 @@ namespace VueAndAspNetCoreSample.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
+       // [HttpGet]
+      //  public ActionResult<IEnumerable<string>> Get()
+       // {
+          //  return null; //return new string[] { "value1", "value2" };
+        //}
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return null; //return new string[] { "value1", "value2" };
+            return null;
         }
 
         // GET api/values/5
@@ -22,6 +27,12 @@ namespace VueAndAspNetCoreSample.Controllers
         public ActionResult<string> Get(int id)
         {
             return "value";
+        }
+        
+         [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
+        {
+            return "UnAuthorized";
         }
 
         // POST api/values
